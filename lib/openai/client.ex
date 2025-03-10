@@ -1,6 +1,7 @@
 defmodule OpenAI.Client do
   @moduledoc false
   alias OpenAI.{Config, Stream}
+  @behaviour OpenAI.ClientBehaviour
   use HTTPoison.Base
 
   def process_url(url), do: Config.api_url() <> url
